@@ -12,12 +12,13 @@ import SocialFooter from './components/SocialFooter'
 
 function App() {
   const storyRef = useRef(null)
-  const scrollToStory = () => storyRef.current?.scrollIntoView({ behavior: 'smooth' })
+  const scrollToStory = () => storyRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
   return (
-    <div className="min-h-screen bg-[#f6efe7]">
+    <div className="min-h-screen bg-gradient-to-b from-[#f6efe7] via-[#f3e8da] to-[#efe0cf] text-[#2b2a28]">
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 bg-white/90 text-[#2b2a28] px-3 py-2 rounded">Skip to content</a>
       <Hero onDiscover={scrollToStory} />
-      <div ref={storyRef}>
+      <main id="main" ref={storyRef} className="">
         <BrandFilm />
         <VisualGrid />
         <FoundersVision />
@@ -27,7 +28,7 @@ function App() {
         <Journal />
         <Community />
         <SocialFooter />
-      </div>
+      </main>
     </div>
   )
 }

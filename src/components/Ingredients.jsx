@@ -12,29 +12,29 @@ const ingredients = [
 export default function Ingredients() {
   const [active, setActive] = useState(0)
   return (
-    <section className="bg-[#f6efe7] py-24 px-6">
+    <section className="py-20 sm:py-24 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
-        <h3 className="font-serif text-3xl text-[#2b2a28] mb-6">The Science of Purity</h3>
-        <div className="grid md:grid-cols-5 gap-3">
+        <h3 className="font-serif text-2xl sm:text-3xl text-[#2b2a28] mb-6">The Science of Purity</h3>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
           {ingredients.map((ing, i) => (
             <motion.div
               key={ing.name}
               onMouseEnter={() => setActive(i)}
-              className={`relative group overflow-hidden rounded-xl aspect-[3/4] ${active===i ? 'ring-2 ring-[#cfae6c]' : ''}`}
+              className={`relative group overflow-hidden rounded-xl aspect-[3/4] ${active===i ? 'ring-2 ring-[#cfae6c]' : 'ring-1 ring-black/5'}`}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
               <img src={ing.img} alt={ing.name} className="w-full h-full object-cover transform transition duration-500 group-hover:scale-105"/>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"/>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"/>
               <div className="absolute bottom-0 p-3">
-                <p className="text-[#f6efe7] font-medium">{ing.name}</p>
-                <p className="text-[#f6efe7]/90 text-sm">{ing.note}</p>
+                <p className="text-white font-medium drop-shadow">{ing.name}</p>
+                <p className="text-white/90 text-sm drop-shadow">{ing.note}</p>
               </div>
             </motion.div>
           ))}
         </div>
-        <button className="mt-6 rounded-full bg-[#2b2a28] text-[#f6efe7] px-6 py-3 text-sm tracking-wide hover:bg-black transition-colors">Explore Ingredients</button>
+        <button className="mt-6 rounded-full bg-[#2b2a28] text-[#f6efe7] px-6 py-3 text-sm tracking-wide hover:bg-black transition-colors focus:outline-none focus:ring-2 focus:ring-[#2b2a28] focus:ring-offset-2 focus:ring-offset-[#f6efe7]">Explore Ingredients</button>
       </div>
     </section>
   )

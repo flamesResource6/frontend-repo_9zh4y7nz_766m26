@@ -5,14 +5,14 @@ export default function Journal() {
     { title: 'The Philosophy of Slow Beauty', img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop' },
   ]
   return (
-    <section className="bg-[#f6efe7] py-24 px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+    <section className="py-20 sm:py-24 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-5">
         {posts.map((p) => (
-          <article key={p.title} className="rounded-2xl overflow-hidden shadow-sm bg-white/60">
-            <img src={p.img} alt={p.title} className="w-full h-48 object-cover"/>
+          <article key={p.title} className="rounded-2xl overflow-hidden shadow-sm bg-white/70">
+            <img src={p.img} alt={p.title} className="w-full h-40 sm:h-48 object-cover"/>
             <div className="p-5">
-              <h4 className="font-serif text-xl text-[#2b2a28]">{p.title}</h4>
-              <button className="mt-4 rounded-full bg-[#2b2a28] text-[#f6efe7] px-4 py-2 text-xs tracking-wide hover:bg-black transition-colors">Read</button>
+              <h4 className="font-serif text-lg sm:text-xl text-[#2b2a28]">{p.title}</h4>
+              <button className="mt-4 rounded-full bg-[#2b2a28] text-[#f6efe7] px-4 py-2 text-xs tracking-wide hover:bg-black transition-colors focus:outline-none focus:ring-2 focus:ring-[#2b2a28] focus:ring-offset-2 focus:ring-offset-[#f6efe7]">Read</button>
             </div>
           </article>
         ))}

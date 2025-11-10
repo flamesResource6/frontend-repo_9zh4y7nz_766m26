@@ -8,17 +8,17 @@ export default function SocialFooter() {
     { label: 'Light', img: 'https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1200&auto=format&fit=crop' },
   ]
   return (
-    <footer className="bg-[#f6efe7] pt-10 pb-16 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3">
+    <footer className="pt-10 pb-16 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
         {items.map((it) => (
           <div key={it.label} className="relative group overflow-hidden rounded-xl">
-            <img src={it.img} alt={it.label} className="h-36 w-full object-cover transform transition duration-500 group-hover:scale-105"/>
+            <img src={it.img} alt={it.label} className="h-32 sm:h-36 w-full object-cover transform transition duration-500 group-hover:scale-105"/>
             <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity"/>
-            <div className="absolute bottom-2 left-2 text-white text-xs tracking-wide bg-black/40 px-2 py-1 rounded-full">{it.label}</div>
+            <div className="absolute bottom-2 left-2 text-white text-[10px] sm:text-xs tracking-wide bg-black/40 px-2 py-1 rounded-full">{it.label}</div>
           </div>
         ))}
       </div>
-      <div className="max-w-6xl mx-auto mt-8 flex items-center justify-between text-xs text-[#6b6862]">
+      <div className="max-w-6xl mx-auto mt-8 flex flex-col sm:flex-row gap-3 sm:gap-0 items-center justify-between text-xs text-[#5a5853]">
         <p>OjasNoor — Where Light Becomes Beauty.</p>
         <a href="#" className="underline">Follow @ojas.noor</a>
       </div>

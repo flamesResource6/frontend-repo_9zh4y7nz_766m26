@@ -14,8 +14,8 @@ const items = [
 
 export default function VisualGrid() {
   return (
-    <section className="bg-[#f6efe7] py-20 px-6">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <section className="py-16 sm:py-20 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
         {items.map((item, i) => (
           <motion.figure
             key={i}
@@ -23,10 +23,10 @@ export default function VisualGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.03 }}
-            className="relative group overflow-hidden rounded-xl shadow-sm"
+            className="relative group overflow-hidden rounded-xl shadow-sm bg-white/40"
           >
-            <img src={item.img} alt={item.caption} className="h-64 w-full object-cover transform transition duration-500 group-hover:scale-105"/>
-            <figcaption className="absolute bottom-0 left-0 right-0 p-4 text-sm tracking-wide text-[#2b2a28] bg-gradient-to-t from-[#f6efe7]/80 to-transparent">
+            <img src={item.img} alt={item.caption} className="h-56 sm:h-64 w-full object-cover transform transition duration-500 group-hover:scale-105"/>
+            <figcaption className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 text-sm tracking-wide text-[#2b2a28] bg-gradient-to-t from-[#f6efe7]/90 to-transparent">
               {item.caption}
             </figcaption>
           </motion.figure>
